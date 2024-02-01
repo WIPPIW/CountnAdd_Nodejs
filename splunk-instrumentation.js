@@ -7,8 +7,8 @@ import SplunkSessionRecorder from '@splunk/otel-web-session-recorder';
 SplunkOtelWeb.init({
    realm: "jp0",
    rumAccessToken: "uAo-ZCU0dYh4RuI1I_l3LQ",
-   applicationName: "MyCountApp",
-   deploymentEnvironment: "dev-count"
+   applicationName: "count-add-app",
+   deploymentEnvironment: "count-app"
 });
 
 // Initialize Splunk Session Recorder
