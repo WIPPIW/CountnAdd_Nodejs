@@ -1,5 +1,23 @@
 <!DOCTYPE html>
+<script src="https://cdn.signalfx.com/o11y-gdi-rum/v0.16.4/splunk-otel-web.js"
+  integrity="sha384-gdJJy13ccMS6fSRtX5XVqUA8bwDATdtyEiuU1NT4pv1qcsCoaJ2YhjhU6tbbiCFv" crossorigin="anonymous"></script>
+<script>
+  SplunkRum.init({
+    realm: "jp0",
+    rumAccessToken: "uAo-ZCU0dYh4RuI1I_l3LQ",
+    applicationName: "count-add-app",
+    deploymentEnvironment: "count-app"
+  });
+</script>
+<script>
+  SplunkSessionRecorder.init({
+    app: "count-add-app",
+    realm: "jp0",
+    rumAccessToken: "uAo-ZCU0dYh4RuI1I_l3LQ"
+  });
+</script>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +30,9 @@
       background-color: #f4f4f4;
       color: #333;
     }
-    button, input[type="submit"] {
+
+    button,
+    input[type="submit"] {
       padding: 10px;
       font-size: 16px;
       cursor: pointer;
@@ -22,6 +42,7 @@
       border: none;
       border-radius: 5px;
     }
+
     #countLabel {
       font-size: 24px;
       margin-top: 20px;
@@ -30,24 +51,29 @@
       padding: 10px;
       border-radius: 5px;
     }
+
     #sumRow {
       font-size: 24px;
       margin-top: 10px;
-      background-color: #ff9800; /* Orange background */
+      background-color: #ff9800;
+      /* Orange background */
       color: white;
       padding: 10px;
       border-radius: 5px;
     }
+
     form {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     label {
       font-size: 18px;
       margin-right: 5px;
     }
+
     input[type="number"] {
       padding: 8px;
       font-size: 14px;
@@ -55,22 +81,27 @@
       border-radius: 5px;
       margin-bottom: 10px;
     }
+
     #dataTable {
       margin-top: 20px;
       width: 50%;
       border-collapse: collapse;
     }
-    #dataTable th, #dataTable td {
+
+    #dataTable th,
+    #dataTable td {
       border: 1px solid #ddd;
       padding: 8px;
       text-align: center;
     }
+
     #dataTable th {
       background-color: #4caf50;
       color: white;
     }
   </style>
 </head>
+
 <body>
   <button id="incrementButton">Increment</button>
   <button id="decrementButton">Decrement</button>
@@ -82,7 +113,7 @@
     <input type="number" id="customCount" name="customCount" min="1" step="1" value="0">
     <input type="submit" value="Add">
   </form>
-  
+
   <table id="dataTable">
     <thead>
       <tr>
@@ -191,4 +222,5 @@
     }
   </script>
 </body>
+
 </html>
