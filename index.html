@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<script src="https://cdn.signalfx.com/o11y-gdi-rum/v0.16.4/splunk-otel-web.js"
-  integrity="sha384-gdJJy13ccMS6fSRtX5XVqUA8bwDATdtyEiuU1NT4pv1qcsCoaJ2YhjhU6tbbiCFv" crossorigin="anonymous"></script>
-<script>
-  SplunkRum.init({
-    realm: "jp0",
-    rumAccessToken: "uAo-ZCU0dYh4RuI1I_l3LQ",
-    applicationName: "count-add-app",
-    deploymentEnvironment: "count-app"
-  });
-</script>
 <html lang="en">
 
 <head>
@@ -93,6 +83,28 @@
       color: white;
     }
   </style>
+  <!-- integrations to Splunk RUM -->
+  <script src="https://cdn.signalfx.com/o11y-gdi-rum/v0.16.5/splunk-otel-web.js"
+    integrity="sha384-zd5QhD1H5BOwLjGzeHqnEpZRkpWp1TwNbJyEedzArs+6Tq/JejIutyQ3rTndqygI"
+    crossorigin="anonymous"></script>
+  <script>
+    SplunkRum.init({
+      realm: "jp0",
+      rumAccessToken: "uAo-ZCU0dYh4RuI1I_l3LQ",
+      applicationName: "count-app-test",
+      deploymentEnvironment: "count-dev"
+    });
+  </script>
+  <script src="https://cdn.signalfx.com/o11y-gdi-rum/v0.16.5/splunk-otel-web-session-recorder.js"
+    integrity="sha384-k6kMobPGxYompyccnaa88srGuLjk6Yb4d7yEt98LhR5zaP0zxjl3ELA5C4LRxvJX"
+    crossorigin="anonymous"></script>
+  <script>
+    SplunkSessionRecorder.init({
+      app: "count-app-test",
+      realm: "jp0",
+      rumAccessToken: "uAo-ZCU0dYh4RuI1I_l3LQ"
+    });
+  </script>
 </head>
 
 <body>
